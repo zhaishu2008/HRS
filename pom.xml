@@ -16,6 +16,11 @@
     
     <dependencies>
         <dependency>
+      <groupId>com.google.appengine</groupId>
+      <artifactId>appengine-api-1.0-sdk</artifactId>
+      <version>1.9.65</version>
+    </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
@@ -25,6 +30,17 @@
 
     <build>
         <plugins>
+             <plugin>
+        <groupId>com.google.appengine</groupId>
+        <artifactId>appengine-maven-plugin</artifactId>
+        <version>1.9.65</version>
+        <configuration>
+          <appId>vast-zodiac-217301</appId> <!-- Override appengine-web.xml <project> -->
+          <version>1</version>
+          <fullScanSeconds>1</fullScanSeconds>
+          <retainUploadDir>true</retainUploadDir>
+        </configuration>
+      </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
